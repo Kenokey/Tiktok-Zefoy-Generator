@@ -1,7 +1,7 @@
 # Tiktok-Zefoy-Generator
-Zefox Automation with Chrome Selenium. Easy and Fast!
-
-discord server if you need any help
+> Zefox Automation with Chrome Selenium. Easy and Fast!
+>
+> discord server if you need any help
 https://discord.gg/DnwnCrvZv8
 
 ## Install Locally
