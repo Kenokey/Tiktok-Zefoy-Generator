@@ -202,13 +202,13 @@ class Main:
             send_button = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, self.send_button[self.option-1])))
             time.sleep(1)
             send_button.click()
-            print("[+] Loading Button First")
+            print("[+] Loading Button Field")
             print("[+] Loaded Everything successfully!")
             print(f"\n{Fore.WHITE}[BOT IS RUNNING NOW]{Fore.RESET}")
             self.successfully_message()
             self.generate_and_send(text_box, search_button, send_button)
         except TimeoutException:
-            print("[+] Loading Text First")
+            print("[+] Loading Text Field")
             
 
         time.sleep(1)
@@ -236,7 +236,7 @@ class Main:
                 time.sleep(3)
                 search_button.click()
                 send_button = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, self.send_button[self.option-1])))
-                time.sleep(3)
+                time.sleep(5)
                 send_button.click()
                 self.successfully_message()
                 text_box = None
