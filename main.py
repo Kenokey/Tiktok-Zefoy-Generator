@@ -89,7 +89,7 @@ class Main:
 
 
     def wait_for_page_to_load(self):
-        self.check_if_website_loaded('captcha', "[+] Page is Ready!", "[-] 001 Error - Cant connect to web service", 10)
+        self.check_if_website_loaded('ua-check', "[+] Page is Ready!", "[-] 001 Error - Cant connect to web service", 10)
 
     def wait_for_captcha_solve(self):
         print("[~] Waiting For CAPTCHA to solve")
@@ -271,6 +271,7 @@ class Main:
 
         self.driver.get("https://zefoy.com/")
 
+        print("[~] Bot Loading, please wait!")
         self.wait_for_page_to_load()
         time.sleep(2)
         self.wait_for_captcha_solve()
