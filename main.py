@@ -29,10 +29,10 @@ class Main:
             "/html/body/div[6]/div/div[2]/div/div/div[2]/div/button", #followers
             "/html/body/div[6]/div/div[2]/div/div/div[3]/div/button", #hearts
             "/html/body/div[6]/div/div[2]/div/div/div[4]/div/button", #comment_hearts
-            "/html/body/div[6]/div/div[2]/div/div/div[5]/div/button", #views
-            "/html/body/div[6]/div/div[2]/div/div/div[6]/div/button", #shares
-            "/html/body/div[6]/div/div[2]/div/div/div[7]/div/button", #favorites
-            "/html/body/div[6]/div/div[2]/div/div/div[8]/div/button"  #livestream
+            "/html/body/div[6]/div/div[2]/div/div/div[6]/div/button", #views
+            "/html/body/div[6]/div/div[2]/div/div/div[7]/div/button", #shares
+            "/html/body/div[6]/div/div[2]/div/div/div[8]/div/button", #favorites
+            "/html/body/div[6]/div/div[2]/div/div/div[9]/div/button"  #livestream
         ]
         self.enter_video_url = [
             "/html/body/div[7]/div/form/div/input", #followers
