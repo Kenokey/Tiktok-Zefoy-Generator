@@ -44,13 +44,13 @@ class Main:
             "/html/body/div[13]/div/form/div/input"  #livestream
         ]
         self.timer_text = [
-            "/html/body/div[7]/div/div/span[1]", #followers
-            "/html/body/div[8]/div/div/span[1]", #hearts
-            "/html/body/div[9]/div/div/span[1]", #comment_hearts
-            "/html/body/div[10]/div/div/span[1]", #views
-            "/html/body/div[11]/div/div/span[1]", #shares
-            "/html/body/div[12]/div/div/span[1]", #favorites
-            "/html/body/div[13]/div/div/span[1]"  #livestream
+            "/html/body/div[7]/div/div/span", #followers
+            "/html/body/div[8]/div/div/span", #hearts
+            "/html/body/div[9]/div/div/span", #comment_hearts
+            "/html/body/div[10]/div/div/span", #views
+            "/html/body/div[11]/div/div/span", #shares
+            "/html/body/div[12]/div/div/span", #favorites
+            "/html/body/div[13]/div/div/span"  #livestream
         ]
         self.search_button = [
             "/html/body/div[7]/div/form/div/div/button", #followers
