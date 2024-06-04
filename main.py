@@ -27,7 +27,7 @@ class Main:
 
 
 
-        self.xpathsNoAd = [
+        self.xpaths = [
             "/html/body/div[6]/div/div[2]/div/div/div[2]/div/button", #followers
             "/html/body/div[6]/div/div[2]/div/div/div[3]/div/button", #hearts
             "/html/body/div[6]/div/div[2]/div/div/div[4]/div/button", #comment_hearts
@@ -132,7 +132,7 @@ class Main:
     def display_button_list(self):
         text = "[~] Decide which bot you want [1 to 8]\n"
         for i in range(7):
-            text = text + "[" + str(i+1) + "] " + self.xpathnames[i] + " " + self.check_button_status(self.xpathsNoAd[i]) + "\n" 
+            text = text + "[" + str(i+1) + "] " + self.xpathnames[i] + " " + self.check_button_status(self.xpaths[i]) + "\n" 
             i+=i
         text = text + f"[8] Discord {Fore.GREEN}[ONLINE]{Fore.RESET}"
         print(text)
@@ -141,7 +141,7 @@ class Main:
 
     def click_button(self, number_option):
         try:
-            xpath = self.xpathsNoAd[number_option - 1]
+            xpath = self.xpaths[number_option - 1]
             element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, xpath)))
             if element.is_enabled():
                 element.click()
@@ -287,8 +287,13 @@ class Main:
         time.sleep(2)
         self.wait_for_captcha_solve()
 
-        self.display_button_list()
-        self.user_input_option()
+        try:
+            self.display_button_list()
+            self.user_input_option()
+        except:
+            self.xpaths = self.xpathsWithAd
+            self.display_button_list()
+            self.user_input_option()
 
         time.sleep(1)
         self.check_if_website_loaded('row', "[+] Started successfully!", "[-] 006 Error - Site cant Connect AND Load", 5)
