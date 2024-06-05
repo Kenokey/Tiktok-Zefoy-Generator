@@ -123,9 +123,21 @@ class Main:
                 return f"{Fore.GREEN}[ONLINE]{Fore.RESET}"
             else:
                 return f"{Fore.RED}[OFFLINE]{Fore.RESET}"
+            
         except TimeoutException:
-            print("[-] 003 Error - Fatal error while generating list")
-            quit()
+            try:
+                self.xpaths = self.xpathsWithAd
+                xpath = self.xpaths[3]
+                element = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, xpath)))
+                if element.is_enabled():
+                    return f"{Fore.GREEN}[ONLINE]{Fore.RESET}"
+                else:
+                    return f"{Fore.RED}[OFFLINE]{Fore.RESET}"
+            except TimeoutException:
+                print("[-] 003 Error - Fatal error while generating list")
+                quit()
+
+          
 
 
 
@@ -287,13 +299,10 @@ class Main:
         time.sleep(2)
         self.wait_for_captcha_solve()
 
-        try:
-            self.display_button_list()
-            self.user_input_option()
-        except:
-            self.xpaths = self.xpathsWithAd
-            self.display_button_list()
-            self.user_input_option()
+
+        self.display_button_list()
+        self.user_input_option()
+     
 
         time.sleep(1)
         self.check_if_website_loaded('row', "[+] Started successfully!", "[-] 006 Error - Site cant Connect AND Load", 5)
