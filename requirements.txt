@@ -1,7 +1,6 @@
 colorama==0.4.6
 selenium==4.10.0
-webdriver-manager==4.0.0
-undetected-chromedriver==3.5.5
+webdriver-manager==4.0.2
 certifi==2024.2.2
 requests==2.32.2
 urllib3==2.2.1
