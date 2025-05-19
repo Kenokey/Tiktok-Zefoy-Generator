@@ -4,9 +4,7 @@
 #https://discord.gg/DnwnCrvZv8
 #DONT CHANGE ANY CODE
 
-from undetected_chromedriver import Chrome, ChromeOptions
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from colorama import Fore
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.remote.webelement import WebElement
@@ -22,8 +20,10 @@ import time
 
 class Main:
     def __init__(self):
-        self.options = ChromeOptions()
-        self.driver = Chrome(executable_path=ChromeDriverManager().install(), options=self.options)
+        self.options = Options()
+        self.options.add_argument("--disable-notifications")
+        service = Service(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(service=service, options=self.options)
 
 
 
