@@ -258,14 +258,15 @@ class Main:
                 text_box = WebDriverWait(self.driver, delay).until(EC.text_to_be_present_in_element((By.XPATH, self.timer_text[self.option-1]), "Next Submit: READY....!"))
                 time.sleep(3)
                 search_button.click()
+
                 send_button = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, self.send_button[self.option-1])))
                 time.sleep(5)
                 send_button.click()
                 self.successfully_message()
                 text_box = None
         except TimeoutException:
-            print("[-] 007 Error - Cant send "+(self.xpathnames[self.option+1])+" because of Connection Error or Closed Service")
-            quit()
+            print("[-] 007 Error - Cannot send " + self.xpathnames[self.option + 1] + " due to a connection error, closed service, or timer reset (you can ignore this message if it's a timer reset)")
+            print("[0] Restart is probably the smartest option")
 
 
 
